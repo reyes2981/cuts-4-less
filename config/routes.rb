@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+
   root 'sessions#home'
 
   get '/signup' => 'customers#new'
   post '/signup' => 'customers#create'
+
+  #get '/login' =>
+  #post '/login' =>
+
+  delete '/logout' => 'sessions#destroy'
 
 
   resources :hairdressers
