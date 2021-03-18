@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
 
     helper_method :current_user, :logged_in? # makes these helper methods available in VIEWS directory
 
+    def destroy
+        session.destroy
+        redirect_to root_path 
+    end
 
     private
 
