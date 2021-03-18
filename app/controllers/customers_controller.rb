@@ -1,8 +1,26 @@
 class CustomersController < ApplicationController
-    has_secure_password
+ 
+    def new
+        @customer = Customer.new
+    end
 
-    has_many :appointments 
-    has_many :hairdressers 
-    has_many :completed_appointments, through: :hairdressers, source: :appointment
+    def create
+        @customer = Customer.new(customer_params)
+        if @customer.save
+            session[:customer_id] = @customer.id
+            redirect_to @customer 
+        else
+            render :new
+        end
+    end
+
+    def show
+    end
+
+    private
+
+    def customer_params
+        params.require(:customer).permit(:name, :email, :password)
+    end
 
 end

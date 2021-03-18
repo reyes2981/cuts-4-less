@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get '/signup' => 'customers#new'
+  post '/signup' => 'customers#create'
+
+  
   resources :hairdressers
   resources :appointments
   resources :customers
