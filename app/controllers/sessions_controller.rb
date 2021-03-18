@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
 
+    def destroy
+        session.destroy
+        redirect_to root_path 
+    end
 
     def create # instance variables not needed because we are not updating form
         customer = Customer.find_by(email: params[:customer][:email])
@@ -11,10 +15,4 @@ class SessionsController < ApplicationController
             redirect_to '/login'
         end
     end
-
-    def destroy
-        session.delete :customer_id
-        redirect_to '/'
-    end
-
 end
