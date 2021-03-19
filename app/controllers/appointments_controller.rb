@@ -8,7 +8,7 @@ class AppointmentsController < ApplicationController
     def create
         @appointment = current_customer.appointments.build(appointment_params)
         if @appointment.save
-            redirect_to 'appointments/index'
+            redirect_to @appointment
         else
             render :new
         end
@@ -17,6 +17,6 @@ class AppointmentsController < ApplicationController
     private
 
     def appointment_params
-        params.require(:appointment).permit(:datetime, hairdressers_attributes: [:id, :name] )
+        params.require(:appointment).permit(:datetime, :hairdresser_id)
     end
 end

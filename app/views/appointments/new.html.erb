@@ -1,8 +1,8 @@
 <h1> Schedule an Appointment </h1>
 
 <%= form_for(@appointment) do |f| %>
-    <%= f.label :hairdresser, "Hair Stylist" %>
-    <%= f.text_field :hairdresser %>
+    <%= f.label :hairdresser_id, "Hair Stylist" %>
+    <%= f.text_field :hairdresser_id %>
     <p>
     <%= f.label :datetime %>
     <%= f.datetime_field :datetime %>
