@@ -1,11 +1,13 @@
 <h1> Schedule an Appointment </h1>
 
 <%= form_for(@appointment) do |f| %>
-    <%= f.label :hairdresser %>
+    <%= f.label :hairdresser, "Hair Stylist" %>
     <%= f.text_field :hairdresser %>
     <p>
     <%= f.label :datetime %>
     <%= f.datetime_field :datetime %>
+    <p>
+    <%= f.submit "Schedule" %>
 
-<%end %>
+<%end%>
 
