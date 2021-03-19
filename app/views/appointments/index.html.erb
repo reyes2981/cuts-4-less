@@ -1,10 +1,9 @@
 <h1> Upcoming Appointments </h1>
 
 
+    
+<% @appointments.each |f| %>
 
-
-<ul>
-<% @appointments.each do |appointment|%>
-  <li><%= appointment.customer.name %> has an appointment with <%= appointment.hairdresser %>
-<% end %>
-</ul>
+    <%= f.customer.name %>
+    
+<%end%>

@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
 
-  resources :hairdressers
+  resources :hairdressers do 
+    resources :customers, only: [:new, :create, :index]
+  end
   resources :appointments do 
     resources :hairdressers, only: [:new, :create, :index] #shallow routing - only nesting what is needed 
   end

@@ -1,18 +1,21 @@
 class AppointmentsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
-    def index # nested route / setting value to @post then evalauating if it's 'nill' or "something" / if true it will continue reading doce below
-        if params[:customer_id] && @customer = Customer.find_by_id(params[:customer_id]) 
-            # confirms it's nested
-            @appointments = @customer.appointments
+    def new 
+        if params[:customer_id] && @customer = Customer.find_by_id(params[:customer_id])
+            @appointment = @customer.appointments.build
         else
-            flash[:message] = "That Customer does not exist" if params[:customer_id]
-            @appointments = Appointment.all
+            @appointment = Appointment.new
         end
     end
 
-    def new 
-        @appointment = Appointment.new
+    def index # nested route / setting value to @post then evalauating if it's 'nill' or "something" / if true it will continue reading doce below
+        if params[:customer_id] && @customer = Customer.find_by_id(params[:customer_id]) 
+            # confirms it's nested
+            @appointments = @customers.appointments
+        else
+            flash[:message] = "That does not exist" if params[:customer_id]
+        end
     end
 
     def create
@@ -31,7 +34,7 @@ class AppointmentsController < ApplicationController
     private
 
     def appointment_params
-        params.require(:appointment).permit(:datetime, :hairdresser_id, :customer_id)
+        params.require(:appointment).permit(:datetime, :customer_id, :hairdresser_id)
     end
 
 end
