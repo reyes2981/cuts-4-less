@@ -8,10 +8,14 @@ class AppointmentsController < ApplicationController
     def create
         @appointment = current_customer.appointments.build(appointment_params)
         if @appointment.save
-            redirect_to @appointment
+            redirect_to appointments_path
         else
             render :new
         end
+    end
+
+    def show
+        
     end
 
     private
