@@ -2,8 +2,13 @@
 
 
     
-<% @appointments.each |f| %>
+<% @appointments.each do |appointment| %> <p>
 
-    <%= f.customer.name %>
-    
-<%end%>
+ <%= appointment.hairdresser %> at 
+
+    <p><%= appointment.datetime.strftime("On %m/%d/%Y") %></p>
+    <p><%= appointment.datetime.strftime("at %I:%M%p") %></p>
+    <p><%= link_to "Your appointment", appointment_path(appointment) %></p>
+
+    <%end%>
+

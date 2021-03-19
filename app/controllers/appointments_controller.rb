@@ -14,7 +14,8 @@ class AppointmentsController < ApplicationController
             # confirms it's nested
             @appointments = @customers.appointments
         else
-            flash[:message] = "That does not exist" if params[:customer_id]
+            flash[:message] = "That Customer does not exist" if params[:customer_id]
+            @appointments = Appointment.all
         end
     end
 
