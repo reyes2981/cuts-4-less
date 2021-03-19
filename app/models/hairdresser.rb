@@ -1,5 +1,5 @@
 class Hairdresser < ApplicationRecord
-    belongs_to :custom
+    belongs_to :customer
     has_many :appointments
     has_many :customers, through: :appointments
 

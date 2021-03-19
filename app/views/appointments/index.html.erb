@@ -1,10 +1,10 @@
 <h1> Upcoming Appointments </h1>
 
 
-    
-    <% @appointments.each do |appointment| %>
-        <p><%= appointment.customer.name %>, you have a appointment with: <%= appointment.hairdresser.name %></p><br>
-        <p><%= appointment.datetime.strftime("On %m/%d/%Y") %></p>
-        <p><%= appointment.datetime.strftime("at %I:%M%p") %></p>
-        <p><%= link_to "Your appointment", appointment_path(appointment) %></p>
-    <% end %>
+
+
+<ul>
+<% @appointments.each do |appointment|%>
+  <li><%= appointment.customer.name %> has an appointment with <%= appointment.hairdresser %>
+<% end %>
+</ul>

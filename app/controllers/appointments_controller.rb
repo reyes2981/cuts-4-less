@@ -25,13 +25,13 @@ class AppointmentsController < ApplicationController
     end
 
     def show
-        
+        @appointment = Appointment.find_by_id(params[:id])
     end
 
     private
 
     def appointment_params
-        params.require(:appointment).permit(:datetime, :hairdresser_id)
+        params.require(:appointment).permit(:datetime, :hairdresser_id, :customer_id)
     end
 
 end
