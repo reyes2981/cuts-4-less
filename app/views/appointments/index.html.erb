@@ -1,9 +1,9 @@
 <h1> Upcoming Appointments </h1>
 
 
-    
-  <% @appointments.each do |appointment| %>
-    <%= appointment.hairdresser.name if appointment.hairdresser %>
-    <p><%= link_to "Your appointment", appointment_path(appointment) %></p>
-    <%end%>
+
+<% @appointments.each do |appointment| %>
+    Appointment confirmed with <%= appointment.hairdresser.name if appointment.hairdresser %> <%= appointment.datetime.strftime("On %m/%d/%Y") %> <%= appointment.datetime.strftime("at %I:%M%p") %></p>
+        <p><%= link_to "Your appointment", appointment_path(appointment) %></p>
+<%end%>
   
