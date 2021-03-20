@@ -5,7 +5,7 @@
     <%= f.collection_select :hairdresser_id, Hairdresser.all, :id, :name %>
     <p>
     <%= f.label :service, "Services" %>
-    <%= f.collection_select :service_id, Service.all, :id, :name %>
+    <%= f.collection_select :service, Service.all, :id, :name  %>
     <p>
     <%= f.label :datetime %>
     <%= f.datetime_field :datetime %>

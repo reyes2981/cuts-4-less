@@ -6,11 +6,11 @@ class AppointmentsController < ApplicationController
     end
 
     def index # nested route / setting value to @post then evalauating if it's 'nill' or "something" / if true it will continue reading doce below
-        @appointments = Appointment.where("customer_id" => current_customer.id )
+        @appointments = Appointment.where("customer_id" => current_customer.id)
     end
 
     def create
-        @appointment = current_customer.appointments.build(appointmentsparams)
+        @appointment = current_customer.appointments.build(appointment_params)
         if @appointment.save
             redirect_to appointment_path
         else
