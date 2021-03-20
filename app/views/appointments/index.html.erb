@@ -2,10 +2,8 @@
 
 
     
-<% if @appointments %>
   <% @appointments.each do |appointment| %>
-    <%= appointment.hairdresser.name %>
+    <%= appointment.hairdresser.name if appointment.hairdresser %>
     <p><%= link_to "Your appointment", appointment_path(appointment) %></p>
     <%end%>
-<%end%>
-
+  

@@ -14,11 +14,11 @@ class HairdressersController < ApplicationController
     end
 
     def index 
-        @hairdressers = hairdresser.all
+        @hairdresser = hairdresse.all
     end
 
     def show
-        @hairdresser = Hairdresser.find(params[:id])
+        @hairdresse = Hairdresser.find(params[:id])
     end
 
     private 
