@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:new, :create, :index]
   end
   resources :appointments do 
-    resources :hairdressers, only: [:new, :create, :index] #shallow routing - only nesting what is needed 
+    resources :hairdressers, only: [:new, :create, :index, :destroy] #shallow routing - only nesting what is needed 
   end
   resources :customers do
     resources :appointments, only: [:new, :create, :index, :destroy]

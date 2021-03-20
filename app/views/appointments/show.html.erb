@@ -1,9 +1,9 @@
 <h1> Appointment Confirmation </h1>
 
 
-<p>Hi <%= @appointment.customer.name if @appointment.customer %></p>
+<p>Hi <%= @appointment.customer.name %></p>
 
-Appointment confirmed with <%= @appointment.hairdresser.name%> on <%= @appointment.datetime.strftime("On %m/%d/%Y") %> at <%= @appointment.datetime.strftime("at %I:%M%p") %></p>
+Appointment confirmed with <%= @appointment.hairdresser.name %> on <%= @appointment.datetime.strftime("On %m/%d/%Y") %> at <%= @appointment.datetime.strftime("at %I:%M%p") %></p>
 <p> Please find the details below:
 
 <h2> Confirmed Time: </h2>
@@ -15,5 +15,5 @@ Appointment confirmed with <%= @appointment.hairdresser.name%> on <%= @appointme
  <p> 7840 Ogden Ave Ste 4 Lyons, IL 60534 </p>
  <p> (708) 447-7729 </p>
 
- <h3> Service <h3>
-   <p>  <%= @appointment.service.name%> <p>
+    <h3> Service <h3>
+    <%= @appointment.service.name %>

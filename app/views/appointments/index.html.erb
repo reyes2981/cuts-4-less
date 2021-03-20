@@ -5,5 +5,7 @@
 <% @appointments.each do |appointment| %>
     Appointment confirmed with <%= appointment.hairdresser.name if appointment.hairdresser %> <%= appointment.datetime.strftime("On %m/%d/%Y") %> <%= appointment.datetime.strftime("at %I:%M%p") %></p>
         <p><%= link_to "Appointment Confirmation", appointment_path(appointment) %></p>
+        <%= button_to "delete", appointment, :method => :delete %>
+
 <%end%>
   
