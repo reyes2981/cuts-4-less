@@ -4,4 +4,6 @@
 # Examples:
 #
   hairdressers = Hairdresser.create([{ name: "Elsa" }, { name: "Lucy" }])
+
+  services =  Service.create([{ name: "Haircut" }, { name: "Styling" }, { name: "Color" }, { name: "Waxing" }, { name: "Perms" }])
 #   
