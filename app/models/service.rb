@@ -1,3 +1,3 @@
 class Service < ApplicationRecord
-    belongs_to :Hairdresser
+    has_one :hairdresser
 end

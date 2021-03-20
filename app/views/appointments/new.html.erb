@@ -4,8 +4,8 @@
     <%= f.label :hairdresser, "Hair Stylist" %>
     <%= f.collection_select :hairdresser_id, Hairdresser.all, :id, :name %>
     <p>
-    <%= f.label :service, "Service" %>
-    <%= f.collection_select :service_id, Services.all, :id, :name %>
+    <%= f.label :service, "Services" %>
+    <%= f.collection_select :service_id, Service.all, :id, :name %>
     <p>
     <%= f.label :datetime %>
     <%= f.datetime_field :datetime %>
