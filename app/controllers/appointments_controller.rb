@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
             @appointments = @customers.appointments
         else
             flash[:message] = "That Customer does not exist" if params[:customer_id]
-            @appointments = Appointment.all
+            @appointments = Appointment.alpha.includes(:customer)
         end
     end
 
@@ -27,6 +27,8 @@ class AppointmentsController < ApplicationController
             render :new
         end
     end
+    #binding.pry
+
 
     def show
         @appointment = Appointment.find_by_id(params[:id])

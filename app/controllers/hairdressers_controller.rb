@@ -18,7 +18,7 @@ class HairdressersController < ApplicationController
     end
 
     def show
-        @hairdresser = hairdresser.find_by_id(params[:id])
+        @hairdresser = Hairdresser.find(params[:id])
     end
 
     private 
