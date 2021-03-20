@@ -1,3 +1,3 @@
 class Service < ApplicationRecord
-    has_one :hairdresser
+    has_one :appointment
 end

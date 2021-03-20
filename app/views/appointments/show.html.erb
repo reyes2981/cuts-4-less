@@ -3,7 +3,7 @@
 
 <p>Hi <%= @appointment.customer.name if @appointment.customer %></p>
 
-Appointment confirmed with <%= @appointment.hairdresser.name if @appointment.hairdresser %> on <%= @appointment.datetime.strftime("On %m/%d/%Y") %> at <%= @appointment.datetime.strftime("at %I:%M%p") %></p>
+Appointment confirmed with <%= @appointment.hairdresser.name%> on <%= @appointment.datetime.strftime("On %m/%d/%Y") %> at <%= @appointment.datetime.strftime("at %I:%M%p") %></p>
 <p> Please find the details below:
 
 <h2> Confirmed Time: </h2>
