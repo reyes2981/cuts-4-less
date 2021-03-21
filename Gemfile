@@ -27,6 +27,7 @@ gem 'activerecord-session_store', '~> 2.0.0'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-rails_csrf_protection'
 gem 'thin'
+gem 'devise', '~> 4.2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
