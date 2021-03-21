@@ -21,10 +21,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'devise', '~> 4.2'
 gem 'activerecord-session_store', '~> 2.0.0 '
+gem 'omniauth', '~> 1.3', '>= 1.3.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
