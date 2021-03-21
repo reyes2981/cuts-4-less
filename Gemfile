@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'device'
+gem 'devise', '~> 4.2'
 gem 'activerecord-session_store', '~> 2.0.0 '
 
 # Use Active Storage variant
