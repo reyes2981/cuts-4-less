@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
  #omniauth callback route
-
- get "/auth/:provider/callback" => 'omniauth#facebook'
+ 
 
   resources :services
   root 'sessions#home'
