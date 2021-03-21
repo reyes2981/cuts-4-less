@@ -22,9 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-facebook'
-git_source(:github) { |devise| "https://github.com/#{devise}.git" }
 gem 'activerecord-session_store', '~> 2.0.0'
-gem 'omniauth', '~> 1.3', '>= 1.3.1'
+gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'omniauth-rails_csrf_protection'
 gem 'thin'
 gem 'devise', '~> 4.2'
