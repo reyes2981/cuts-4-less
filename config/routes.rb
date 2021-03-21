@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
- #omniauth callback route
- 
+  #omniauth callback route
+  get '/auth/google_oauth2/callback' => 'sessions#google'
 
   resources :services
   root 'sessions#home'

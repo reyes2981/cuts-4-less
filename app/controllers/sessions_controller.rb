@@ -15,4 +15,11 @@ class SessionsController < ApplicationController
             redirect_to '/login'
         end
     end
+
+    def google
+    end
+
+    private
+
+    
 end
