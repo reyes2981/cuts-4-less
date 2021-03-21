@@ -1,12 +1,23 @@
 class OmniauthController < ApplicationController
 
     def facebook
-        @customer = Customer.create_from_provider_data(request.env['omniauth.auth'])
-        if @customer.persisted?
-            sign_in_and_redirect @customer
-            set_flash_message(:notice, :success, kind: 'facebook') if is_navigational_format?
-        else
-            flash[:error] = "There was a problem signing in through Facebook. Please Register or try again. "
-            redirect new_customer_registration_url
+        #find_or_create a customer using the attributes auth
+        @customer = Customer.find_or_create_by(email: auth["info"]["email"]) do |customer|
+            customer.customername = auth["info"]["first_name"]
+            customer.password = SecureRandom.hex(10)
         end
+        if @customer.save
+          session[:customer_id] = @customer.id
+          redirect_to customer_path(@customer)
+        else
+          redirect_to '/'
+        end
+    end
+
+    private
+
+    def auth
+      request.env['omniauth.auth']
+    end
+  
 end

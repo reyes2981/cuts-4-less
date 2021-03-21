@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :customers, controllers: {omniauth_callbacks: 'omniauth'}
+ #omniauth callback route
+
+ get "/auth/:provider/callback" => 'omniauth#facebook'
 
   resources :services
   root 'sessions#home'
