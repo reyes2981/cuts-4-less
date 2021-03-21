@@ -8,10 +8,10 @@ class Customer < ApplicationRecord
     device :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
     :omniauthable, :omniauth_providers: [:facebook]
 
-    def self.create_from_providers_data(provider_data)
+    def self.create_from_provider_data(provider_data)
         where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do |customer|
-            customer.email = provider.data.info.email
-            customer.password = provider.data.info.password
+            customer.email = provider_data.info.email
+            customer.password = Device.freindly_token[0, 29]
         end
     end
 
