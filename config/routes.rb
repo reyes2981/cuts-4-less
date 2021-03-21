@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'auth/provider_name', as: 'provider_name_login'
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get 'auth/facebook', as: 'facebook_login'
+  get '/auth/:facebook/callback', to: 'sessions#create'
 
   resources :services
   root 'sessions#home'
