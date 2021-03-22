@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_024448) do
+ActiveRecord::Schema.define(version: 2021_03_22_192909) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "hairdresser_id"
@@ -22,13 +22,14 @@ ActiveRecord::Schema.define(version: 2021_03_22_024448) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "name"
+    t.string "full_name"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider"
     t.string "uid"
+    t.index ["email"], name: "index_customers_on_email", unique: true
   end
 
   create_table "hairdressers", force: :cascade do |t|
