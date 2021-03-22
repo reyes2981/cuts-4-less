@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
- # get '/auth/:provider/callback', to: 'sessions#omniauth'
+  resources :customers do
+    resources :appointments, only: [:new, :create, :index, :destroy]
+  end
+
+  resources :hairdressers do 
+    resources :customers, only: [:new, :create, :index]
+  end
+  resources :appointments do 
+    resources :hairdressers, only: [:new, :create, :index, :destroy] #shallow routing - only nesting what is needed 
+  end
+
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
 
   resources :services
   root 'sessions#home'
@@ -13,21 +24,7 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy'
 
-  get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
-
-  
-  resources :hairdressers do 
-    resources :customers, only: [:new, :create, :index]
-  end
-
-  resources :customers do
-    resources :appointments, only: [:new, :create, :index]
-  end
-  
-  resources :appointments do 
-    resources :hairdressers, only: [:new, :create, :index] #shallow routing - only nesting what is needed 
-  end
-
+  get '/customers/:customer_id/appointments/:id' => 'appointments#destroy'
 
 
 

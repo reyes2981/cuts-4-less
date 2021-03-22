@@ -1,7 +1,7 @@
 <h1> Appointment Confirmation </h1>
 
 
-<p>Hi <%= @appointment.customer.name %></p>
+<p>Hi <%= @appointment.customer.name if @appointment.customer %></p>
 
 Appointment confirmed with <%= @appointment.hairdresser.name %> on <%= @appointment.datetime.strftime("On %m/%d/%Y") %> at <%= @appointment.datetime.strftime("at %I:%M%p") %></p>
 <p> Please find the details below:
