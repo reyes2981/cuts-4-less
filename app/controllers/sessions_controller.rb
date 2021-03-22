@@ -16,25 +16,15 @@ class SessionsController < ApplicationController
         end
     end
 
-    def google
-        @customer = Customer.find_or_create_by(email: auth["info"]["email"]) do |customer|
-            customer.name= auth["info"]["first_name"]
-            customer.password= SecureRandom.hex(10) # assigns a random password
-        end
-
-        if @customer && @customer.id
-            session[:customer_id] = @customer.id
-            redirect_to customer_path(customer)
-        else
-            redirect_to '/'
-        end
+    def omniauth
+        render plain: "success"
         
     end
 
     private
 
     def auth
-        request.env("omniauth.auth")
+        request.env['omniauth.auth']
     end
 
 

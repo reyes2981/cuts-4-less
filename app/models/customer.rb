@@ -5,7 +5,6 @@ class Customer < ApplicationRecord
     has_many :hairdressers
     has_many :reviews_of_appointment, through: :hairdressers, source: :appointment
 
-
-  
+   
 
 end

@@ -16,4 +16,4 @@ Appointment confirmed with <%= @appointment.hairdresser.name %> on <%= @appointm
  <p> (708) 447-7729 </p>
 
     <h3> Service <h3>
-    <%= @appointment.service.name %>
+    <%= @appointment.service.name if @appointment.service %>

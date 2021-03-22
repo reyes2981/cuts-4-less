@@ -24,7 +24,7 @@ class AppointmentsController < ApplicationController
 
 
     def destroy
-        @appointment = current_customers.appointments.find(params[:id]) # browser side
+        @appointment = current_customer.appointments.find(params[:id]) # browser side
         @appointment.destroy    
 
         redirect_to '/appoinments'

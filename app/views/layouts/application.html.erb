@@ -11,6 +11,8 @@
 
   <body>
 
+    <%= flash[:message] %>
+
     <div>
     <% if logged_in? %>
       <%= link_to "Schedule An Appointment", new_appointment_path %>|
@@ -20,7 +22,7 @@
       <%= link_to "Sign Up", signup_path %> |
       <%= link_to "Log in", login_path %> 
       <%end%>
-      <%= link_to "Log In With Google", '/auth/google_oauth2', method: :post%>      
+      <%= button_to "Log In With Google", '/auth/google_oauth2', method: :post %>      
 
     </div>
 
