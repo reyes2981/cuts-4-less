@@ -21,10 +21,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt'
-gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
-gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-rails_csrf_protection' 
+gem 'omniauth'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
