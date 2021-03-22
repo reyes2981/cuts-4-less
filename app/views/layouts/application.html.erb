@@ -14,7 +14,7 @@
     <%= flash[:message] %>
 
     <div>
-    <%= link_to "home", root_path %>
+    <%= link_to "home", root_path%>
     <% if logged_in? %>
       <%= link_to "Schedule An Appointment", new_appointment_path %>|
       <%= link_to "Upcoming Appointments", customer_appointments_path(current_customer) %>|

@@ -5,7 +5,7 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.new
     end
 
-    def index # nested route / setting value to @post then evalauating if it's 'nill' or "something" / if true it will continue reading doce below
+    def index # nested route / setting value to @appointment then evalauating if it's 'nill' or "something" / if true it will continue reading code below
         @appointments = Appointment.where("customer_id" => current_customer.id)
     end
 
@@ -20,6 +20,7 @@ class AppointmentsController < ApplicationController
 
     def show
         @appointment = Appointment.find_by_id(params[:id])
+        redirect_to appointments_path if !@appointment
     end
 
 
