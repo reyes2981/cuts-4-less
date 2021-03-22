@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
   root 'sessions#home'
 
+  devise_for :customers, controllers: { omniauth_callbacks: 'customers/omniauth_callbacks' }
+  devise_scope :admin do
+    get 'customers/sign_in', to: 'customers/sessions#new', as: :new_customer_session
+    get 'customers/sign_out', to: 'customers/sessions#destroy', as: :destroy_customer_session
+  end
+
   get '/signup' => 'customers#new'
   post '/signup' => 'customers#create'
 
@@ -9,8 +15,6 @@ Rails.application.routes.draw do
   post '/login' =>'sessions#create'
 
   delete '/logout' => 'sessions#destroy'
-
-
 
 
   resources :customers do 
