@@ -1,10 +1,5 @@
 class SessionsController < ApplicationController
 
-    def destroy
-        session.destroy
-        redirect_to root_path 
-    end
-
     def create # instance variables not needed because we are not updating form
         customer = Customer.find_by(email: params[:customer][:email])
         if customer && customer.authenticate(params[:customer][:password])
@@ -28,6 +23,11 @@ class SessionsController < ApplicationController
         else
           redirect_to '/'
         end
+      end
+
+      def destroy
+        session.destroy
+        redirect_to root_path 
       end
 
     private

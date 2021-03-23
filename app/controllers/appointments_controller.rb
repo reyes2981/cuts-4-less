@@ -12,7 +12,7 @@ class AppointmentsController < ApplicationController
     def create
         @appointment = current_customer.appointments.build(appointments_params)
         if @appointment.save
-            redirect_to appointments_path
+            redirect_to customer_appointments_path(current_customer)
         else
             render :new
         end
