@@ -4,7 +4,7 @@
 
 <% @appointments.each do |appointment| %>
     Appointment confirmed with <%= appointment.hairdresser.name if appointment.hairdresser %> <%= appointment.datetime.strftime("On %m/%d/%Y") if appointment.datetime %> <%= appointment.datetime.strftime("at %I:%M%p") if appointment.datetime %></p>
-        <p><%= link_to "Appointment Confirmation", customer_appointment_path(current_customer) %></p>
+        <p><%= link_to "Appointment Confirmation", appointment_path(appointment) %></p>
 <%end%>
 
 
