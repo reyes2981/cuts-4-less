@@ -24,7 +24,7 @@ class HairdressersController < ApplicationController
     private 
 
     def hairdresser_params 
-        params.require(:hairdresser).permit(:id, :name)
+        params.require(:hairdresser).permit(:appointment_id, :name)
     end
 
     
