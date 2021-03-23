@@ -1,5 +1,5 @@
 class Hairdresser < ApplicationRecord
-    belongs_to :customer
-    belongs_to :appointment
+    belongs_to :customer, optional: true 
+    belongs_to :appointment, optional: true 
 
 end

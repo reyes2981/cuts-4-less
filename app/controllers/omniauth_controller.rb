@@ -1,4 +1,4 @@
-class OmniauthController < Devise::OmniauthCallbacksController 
+class OmniauthController 
 
 
 end

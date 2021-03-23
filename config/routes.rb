@@ -18,12 +18,10 @@ Rails.application.routes.draw do
 
 
   resources :customers do 
-    resources :appointments, only: [:new, :create, :index]
+    resources :appointments, only: [:new, :create, :index, :show]
   end
   
-  resources :appointments do 
-    resources :customers, only: [:new, :create, :index]
-  end
+  resources :appointments 
   
 
 

@@ -20,7 +20,7 @@ class AppointmentsController < ApplicationController
 
     def show
         @appointment = Appointment.find_by_id(params[:id])
-        redirect_to appointments_path if !@appointment
+        redirect_to appointment_path if !@appointment
     end
 
 
