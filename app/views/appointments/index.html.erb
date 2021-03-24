@@ -1,10 +1,9 @@
 <h1> Upcoming Appointments </h1>
 
 
-
 <% @appointments.each do |appointment| %>
-    Appointment confirmed with <%= appointment.hairdresser.name if appointment.hairdresser %> <%= appointment.datetime.strftime("On %m/%d/%Y") if appointment.datetime %> <%= appointment.datetime.strftime("at %I:%M%p") if appointment.datetime %></p>
-        <p><%= link_to "Appointment Confirmation", appointment_path(appointment) %></p>
+    Appointment confirmed with <%= appointment.hairdresser.name if appointment.hairdresser %> <%= appointment.date_time.strftime("On %m/%d/%Y") if appointment.date_time %> <%= appointment.date_time.strftime("at %I:%M%p") if appointment.date_time %></p>
+        <p><%= link_to "Appointment Confirmation", appointment_path(appointment), min: Date.today %></p>
 <%end%>
 
 

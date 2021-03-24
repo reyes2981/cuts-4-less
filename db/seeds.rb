@@ -4,7 +4,7 @@
 # Examples:
 #
 
-hairdressers = Hairdresser.create!([{ name: "Elsa" }, { name: "Lucy" }])
+hairdressers = Hairdresser.create!([{ name: "Elsa" }, { name: "Lucy" }, { name: "Margarita" }])
 
-services =  Service.create!([{ name: "Haircut" }, { name: "Styling" }, { name: "Color" }, { name: "Waxing" }, { name: "Perms" }, { name: "Other" }])
+#services =  Service.create!([{ name: "Haircut" }, { name: "Styling" }, { name: "Color" }, { name: "Waxing" }, { name: "Perms" }, { name: "Other" }])
 #   

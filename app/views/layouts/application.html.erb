@@ -14,16 +14,17 @@
     <%= flash[:message] %>
 
     <div>
-    <%= link_to "home", root_path%>
+    <%= link_to "Home", root_path%> |
     <% if logged_in? %>
       <%= link_to "Schedule An Appointment", new_appointment_path %>|
-      <%= link_to "Upcoming Appointments", customer_appointments_path(current_customer) %>|
+      <%= link_to "Upcoming Appointments", customer_appointments_path(current_customer) %>
       <%= button_to "Sign out", logout_path, method: :delete %>
       <%else%>
       <%= link_to "Sign Up", signup_path %> |
       <%= link_to "Log in", login_path %> 
+          <%= button_to "Log In With Google", '/auth/google_oauth2'%>  
       <%end%>
-      <%= button_to "Log In With Google", '/auth/google_oauth2'%>      
+      
 
     </div>
 
