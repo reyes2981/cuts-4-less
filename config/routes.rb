@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'sessions#home'
 
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+
   get '/signup' => 'customers#new'
   post '/signup' => 'customers#create'
 
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
 resources :appointments 
   
 
-
+# Omniaut routes
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
