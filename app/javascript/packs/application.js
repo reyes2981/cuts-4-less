@@ -11,3 +11,15 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+<script type='text/javascript'>
+    $("#country_drop_down_id").change(function(){
+    if($(this).val()=='US'){
+       $('#state_drop_down_id').show();
+       $('#state_text_field_id').hide();
+    }else{
+       $('#state_drop_down_id').hide();
+       $('#state_text_field_id').show();
+    }
+    });
+ </script>

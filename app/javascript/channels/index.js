@@ -3,3 +3,8 @@
 
 const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
+
+
+$('#field1').on 'change', ->
+  $('#field2').val(@value)
+  $('#field3').val(@value)

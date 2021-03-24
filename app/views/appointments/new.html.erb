@@ -6,7 +6,6 @@
     <p>
     <%= f.label :service, "Services" %>
     <%= f.collection_select :service_id, Service.all, :id, :name, :prompt => 'Select One' %>
-    <%= f.text_field :service_id, "data-depends-on" => "#object_type_name" %>
     <p>
     <%= f.label :datetime %>
     <%= f.datetime_field :datetime %>
