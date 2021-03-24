@@ -6,6 +6,8 @@
     <p>
     <%= f.label :service, "Services" %>
     <%= f.collection_select :service_id, Service.all, :id, :name, :prompt => 'Select One' %>
+
+   
     <p>
     <%= f.label :datetime %>
     <%= f.datetime_field :datetime %>

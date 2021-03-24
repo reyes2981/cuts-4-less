@@ -26,6 +26,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'simple_calendar', '~> 2.0', '>= 2.0.6'
+gem 'validates_timeliness', '~> 4.0', '>= 4.0.2'
 
 
 

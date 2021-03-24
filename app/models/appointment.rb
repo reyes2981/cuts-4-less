@@ -4,4 +4,6 @@ class Appointment < ApplicationRecord
     belongs_to :service, optional: true
 
     accepts_nested_attributes_for :customer
+
+
 end
