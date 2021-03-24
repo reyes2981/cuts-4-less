@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
     end
 
     def show
-        @appointment = Appointment.find_by_id(params[:id])
+        @appointment = Appointment.find_by_id(params[:id]) # && Appointment.where('start >= ?', Date.today).order(:start)
         redirect_to appointment_path if !@appointment
     end
 
@@ -30,6 +30,8 @@ class AppointmentsController < ApplicationController
 
         redirect_to '/appoinments'
     end
+
+    
 
     
 
