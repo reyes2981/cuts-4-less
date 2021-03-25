@@ -5,5 +5,5 @@ class Appointment < ApplicationRecord
 
     accepts_nested_attributes_for :customer
 
-
+``
 end
