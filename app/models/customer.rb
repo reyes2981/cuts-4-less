@@ -5,6 +5,9 @@ class Customer < ApplicationRecord
     has_many :hairdressers
     has_many :reviews_of_appointment, through: :hairdressers, source: :appointment
 
+    validates_presence_of :password, presence: true
+    validates :name, presence: true
+
     devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
     :omniauthable, omniauth_providers: [:facebook]
 

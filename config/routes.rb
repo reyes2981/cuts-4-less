@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :customers, controllers: {omniauth_callbacks: 'omniauth'}
-
   resources :services
   root 'sessions#home'
 
@@ -15,7 +13,7 @@ Rails.application.routes.draw do
 
 
   resources :hairdressers do 
-    resources :customers, only: [:new, :create, :index]
+    resources :customers, only: [:new, :create, :index, :show]
   end
   resources :appointments do 
     resources :hairdressers, only: [:new, :create, :index, :destroy] #shallow routing - only nesting what is needed 

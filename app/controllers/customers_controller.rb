@@ -10,7 +10,7 @@ class CustomersController < ApplicationController
             session[:customer_id] = @customer.id
             redirect_to @customer 
         else
-            render :new
+            flash[:notice]="Password can't be empty"
         end
     end
 

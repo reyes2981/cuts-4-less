@@ -10,6 +10,8 @@
     <p>
     <%= f.label :password %>
     <%= f.password_field :password %>
+    <% f.errors.invalid?(:notice) %>
+    
     <p>
     <%= f.submit "Sign Up" %>
 
