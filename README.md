@@ -1,6 +1,4 @@
-# README
-
-### Cuts4Less
+# Cuts4Less
 
 Welcome to Cuts4Less! 
 
