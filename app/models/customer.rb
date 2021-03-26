@@ -6,9 +6,8 @@ class Customer < ApplicationRecord
     has_many :reviews_of_appointment, through: :hairdressers, source: :appointment
 
     validates_presence_of :password, presence: true
-    validates :full_name, presence: true
+    validates :full_name, :email, presence: true
 
  
-    
-    
+
 end
