@@ -21,10 +21,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt'
-gem 'devise', github: 'heartcombo/devise'
-
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
-gem 'activerecord-session_store', '~> 1.0'
 
 
 

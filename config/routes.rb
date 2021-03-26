@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  root 'sessions#home'
+  get "/auth/google_oauth2/callback" => 'sessions#omniauth'
 
-  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
+  resources :services
+  root 'sessions#home'
 
   get '/signup' => 'customers#new'
   post '/signup' => 'customers#create'
@@ -13,15 +14,14 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
 
-  resources :customers do 
-    resources :appointments
+  resources :hairdressers do 
+    resources :customers, only: [:new, :create, :index, :show]
   end
-  
-resources :appointments 
-  
-
-# Omniaut routes
-
-
+  resources :appointments do 
+    resources :hairdressers, only: [:new, :create, :index, :destroy] #shallow routing - only nesting what is needed 
+  end
+  resources :customers do
+    resources :appointments, only: [:new, :create, :index, :destroy]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

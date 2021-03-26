@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        #find_or_create a customer using the attributes auth
+        #find_or_create a customer using the attribute auth
         @customer = Customer.find_or_create_by(email: auth["info"]["email"]) do |customer|
           customer.full_name = auth["info"]["name"]
           customer.password = SecureRandom.hex(10)
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
         else
           redirect_to '/'
         end
-      end
+    end
 
       def destroy
         session.destroy
@@ -32,9 +32,9 @@ class SessionsController < ApplicationController
 
     private
 
-    def auth
-        request.env['omniauth.auth']
-    end
+  def auth
+    request.env['omniauth.auth']
+  end
 
 
 end
