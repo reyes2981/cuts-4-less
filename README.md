@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Cuts4Less
 
-Things you may want to cover:
+Welcome to Cuts4Less! 
 
-* Ruby version
+An app created for customers to schedule appointments with the local business, Cuts 4 Less.
 
-* System dependencies
+* Installation
+Clone the repo
 
-* Configuration
+`git@github.com:reyes2981/cuts-4-less.git`
 
-* Database creation
+Next,
 
-* Database initialization
+execute `bundle install`
 
-* How to run the test suite
+*Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+`cd cuts-4-less`
 
-* Deployment instructions
+`rails s`
+
+Finally navigate to to
+
+http://localhost:3000/
+
 
 * ...
