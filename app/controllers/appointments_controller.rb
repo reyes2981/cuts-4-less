@@ -5,9 +5,9 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.new
     end
 
-    def index # nested route / setting value to @appointment then evalauating if it's 'nill' or "something" / if true it will continue reading code below
-        @appointments = Appointment.where("customer_id" => current_customer.id)
-    end
+    #def index # nested route / setting value to @appointment then evalauating if it's 'nill' or "something" / if true it will continue reading code below
+      #  @appointments = Appointment.where("customer_id" => current_customer.id)
+   # end
 
     def create
         @appointment = current_customer.appointments.build(appointments_params)
@@ -23,6 +23,9 @@ class AppointmentsController < ApplicationController
         redirect_to appointment_path if !@appointment
     end
 
+    def index
+        @appointments = Appointment.where("date_time < ?", Date.today )
+    end
 
     def destroy
         @appointment = current_customer.appointments.find(params[:id]) # browser side

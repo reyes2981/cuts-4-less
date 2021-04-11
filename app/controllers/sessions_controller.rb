@@ -13,11 +13,11 @@ class SessionsController < ApplicationController
 
     def omniauth
         #find_or_create a customer using the attribute auth
-        customer = Customer.find_or_create_by(uid: auth["info"]["uid"], email: auth["info"]["email"]) do |c|
+        @customer = Customer.find_or_create_by(uid: auth["info"]["uid"], email: auth["info"]["email"]) do |c|
           c.full_name = auth["info"]["name"]
           c.password = SecureRandom.hex(10)
         end
-        if customer.save
+        if @customer.save
           session[:customer_id] = @customer.id
           redirect_to customer_path(@customer)
         else
